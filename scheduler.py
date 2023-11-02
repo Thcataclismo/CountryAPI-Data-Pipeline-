@@ -3,10 +3,8 @@ from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 from main import main
 
-# Defina o nome do seu DAG
 dag_name = 'scheduler_dag'
 
-# Argumentos padrão do DAG
 default_args = {
     'owner': 'Thiago',
     'depends_on_past': False,
@@ -15,7 +13,6 @@ default_args = {
     'retry_delay': timedelta(minutes=5),
 }
 
-# Crie uma instância do DAG
 dag = DAG(
     dag_name,
     default_args=default_args,
